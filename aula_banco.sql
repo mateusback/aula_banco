@@ -43,3 +43,29 @@ INSERT INTO cidade (nome, estado_id) VALUES ('Paranavaí', '1');
 INSERT INTO cidade (nome, estado_id) VALUES ('Criciúma', '2');
 
 SELECT * FROM cidade; 
+
+/*
+A alteração de tabelas é normal nas fases inicais do projeto, quando o cliente ainda não tem acesso.
+Nesse caso, é só alterar direto no script da tabela.
+ - Se a base de dados já estiver sendo utilizada, deve-se usar o ALTER TABLE
+*/
+
+ALTER TABLE estado ADD COLUMN regiao VARCHAR(100) NOT NULL; -- adicionado uam coluna na tabela estado
+
+
+-- ALTER TABLE estado MODIFY COLUMN regiao VARCHAR(100) NOT NULL; -- mudando o tipo de uma coluna já existente. 
+-- ALTER TABLE estado DROP COLUMN regiao;
+ALTER TABLE estado MODIFY COLUMN regiao VARCHAR(100) NOT NULL DEFAULT 'valor não informado' AFTER NOME;
+/*
+O AFTER é referente a posição da coluna na tabela, para colocar em primeiro lugar, usar FIRST
+*/
+ALTER TABLE estado modify COLUMN regiao VARCHAR(100) NOT NULL AFTER sigla;
+ALTER TABLE estado CHANGE regiao regiao_estado VARCHAR(100) NOT NULL; -- alterando o nome de uma coluna
+ALTER TABLE estado DROP CONSTRAINT estado_ativo_deve_ser_S_ou_N; -- dropando uma regra > importancia de nomear uma regra
+ALTER TABLE estado MODIFY COLUMN ativo ENUM('S','N') NOT NULL; -- ENUM retringe um conjunto de valores
+DESCRIBE estado; -- descreve os detalhes da tabela
+/*
+definir que uma coluna não pode ter valores nulos, quando já existem gera erro. Levando a duas possibilidades:
+eliminar os valores nulos
+eliminar toda a coluna CASO NÃO TENHA NENHUM VALOR.
+*/
