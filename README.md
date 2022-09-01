@@ -5,9 +5,9 @@ Checklist Curso: <br/>
 [x] Aula Instalação: [x] Forms [x] Comentário  <br/>
 [x] Aula 1: [x] Forms [x] Comentário <br/>
 [x] Aula 2: [x] Forms [x] Comentário <br/>
-[x] Aula 3: [x] Forms [] Exercício [] Comentário <br/>
+[x] Aula 3: [x] Forms [x] Exercício [] Comentário <br/>
 [x] Aula 4: [x] Forms [x] Exercício [] Comentário <br/>
 [x] Aula 5: [x] Forms [x] Exercício [] Comentário <br/>
-[] Aula 6: [] Forms [] Exercício [] Comentário <br/>
+[X] Aula 6: [x] Forms [x] Exercício [] Comentário <br/>
 [] Aula 7: [] Forms [] Exercício [] Comentário <br/>
 [] Aula 8: [] Forms [] Exercício [] Comentário <br/>
