@@ -59,7 +59,7 @@ ALTER TABLE estado MODIFY COLUMN regiao VARCHAR(100) NOT NULL DEFAULT 'valor nã
 /*
 O AFTER é referente a posição da coluna na tabela, para colocar em primeiro lugar, usar FIRST
 */
-ALTER TABLE estado modify COLUMN regiao VARCHAR(100) NOT NULL AFTER sigla;
+ALTER TABLE estado MODIFY COLUMN regiao VARCHAR(100) NOT NULL AFTER sigla;
 ALTER TABLE estado CHANGE regiao regiao_estado VARCHAR(100) NOT NULL; -- alterando o nome de uma coluna
 ALTER TABLE estado DROP CONSTRAINT estado_ativo_deve_ser_S_ou_N; -- dropando uma regra > importancia de nomear uma regra
 ALTER TABLE estado MODIFY COLUMN ativo ENUM('S','N') NOT NULL; -- ENUM retringe um conjunto de valores
