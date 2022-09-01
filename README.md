@@ -8,6 +8,6 @@ Checklist Curso: <br/>
 [x] Aula 3: [x] Forms [x] Exercício [] Comentário <br/>
 [x] Aula 4: [x] Forms [x] Exercício [] Comentário <br/>
 [x] Aula 5: [x] Forms [x] Exercício [] Comentário <br/>
-[X] Aula 6: [x] Forms [x] Exercício [] Comentário <br/>
-[] Aula 7: [] Forms [] Exercício [] Comentário <br/>
+[x] Aula 6: [x] Forms [x] Exercício [] Comentário <br/>
+[x] Aula 7: [x] Forms [x] Exercício [] Comentário <br/>
 [] Aula 8: [] Forms [] Exercício [] Comentário <br/>
