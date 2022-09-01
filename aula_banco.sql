@@ -15,7 +15,7 @@ id INT NOT NULL AUTO_INCREMENT -- Regras definidas na linha = CONSTRAINT INLINE
 Está é uma regra SEM NOME para a definição de valores de ativos. 
 Regras definidas fora da linha = CONSTRAINT OUT OF LINE */
 ,CONSTRAINT pk_estado PRIMARY KEY (id)
-,CONSTRAINT coluna_ativo_deve_ser_S_ou_N CHECK (ativo IN ('S','N') ) -- Regra com nome, diferente da anterior
+,CONSTRAINT estado_ativo_deve_ser_S_ou_N CHECK (ativo IN ('S','N') ) -- Regra com nome, diferente da anterior
 );
 
 /*
@@ -25,5 +25,21 @@ VALUES (1, 'Paraná', 'PR', 'S', '2022-08-31') -- datetime no formato (aaaa-mm--
 INSERT INTO estado (nome,sigla) VALUES ('Paraná', 'PR');
 INSERT INTO estado (nome,sigla) VALUES ('Santa Catarina', 'SC');
 
-SELECT id,nome,sigla,ativo,data_cadastro FROM estado;
+SELECT * FROM estado; 
 
+CREATE TABLE cidade(
+id INT NOT NULL AUTO_INCREMENT 
+,nome VARCHAR(200) NOT NULL UNIQUE
+,estado_id INT NOT NULL
+,ativo CHAR(1) NOT NULL DEFAULT 'S' 
+,data_cadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP 
+,CONSTRAINT pk_cidade PRIMARY KEY (id)
+,CONSTRAINT fk_cidade_estado FOREIGN KEY (estado_id) REFERENCES estado (id) -- uma fk sempre referencia uma pk
+,CONSTRAINT cidade_ativo_deve_ser_S_ou_N CHECK (ativo IN ('S','N') )
+,CONSTRAINT cidade_unica UNIQUE(nome, estado_id) -- Regra que define que a combinação do nome da cidade e do id de um estado sejam unicas.
+);
+
+INSERT INTO cidade (nome, estado_id) VALUES ('Paranavaí', '1');
+INSERT INTO cidade (nome, estado_id) VALUES ('Criciúma', '2');
+
+SELECT * FROM cidade; 
