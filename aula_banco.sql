@@ -69,3 +69,10 @@ definir que uma coluna não pode ter valores nulos, quando já existem gera erro
 eliminar os valores nulos
 eliminar toda a coluna CASO NÃO TENHA NENHUM VALOR.
 */
+UPDATE estado SET nome = 'PARANA' WHERE id = 1; -- Mudando o nome pelo ID porque ele é único
+UPDATE estado SET nome = 'PARANÁ', ativo = 'N' WHERE id = 1; -- mundando duas colunas de uma tabela
+UPDATE estado SET ativo = 'N'; -- mudando todos os ativos de uma vez, se o sistema não estiver em modo de segurança
+UPDATE cidade SET ativo = 'N' WHERE estado_id = 1; -- mudando dados da tabela cidade com o id do estado
+
+DELETE FROM cidade WHERE id = 1; -- Deletando com o ID porque ele é único; 
+DELETE FROM cidade WHERE estado_id = 1; -- Deletando todas as cidades de um estado (BOMBA)
